@@ -365,10 +365,6 @@ Contributions are welcome! Please:
 7. Push to the branch (`git push origin feature/amazing-feature`)
 8. Open a Pull Request
 
-## 📝 License
-
-[Your License Here]
-
 ## 🙏 Acknowledgments
 
 - Built with [CrewAI](https://www.crewai.com/) - Multi-agent orchestration framework
@@ -378,7 +374,7 @@ Contributions are welcome! Please:
 
 ## 📧 Contact
 
-[Your Contact Information]
+fran.benko@gmail.com
 
 ## 🔮 Roadmap
 
