@@ -1,0 +1,65 @@
+[tool.poetry]
+name = "prompt-optimizer-crew"
+version = "0.1.0"
+description = "A multi-agent system for analyzing and optimizing prompts using CrewAI with local LLMs"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "prompt_optimizer_crew", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<=3.13"
+crewai = "^0.80.0"
+crewai-tools = "^0.14.0"
+langchain = "^0.3.1"
+langchain-community = "^0.3.1"
+transformers = "^4.45.0"
+torch = "^2.5.0"
+accelerate = "^1.1.0"
+bitsandbytes = "^0.44.0"
+sentence-transformers = "^3.3.0"
+python-dotenv = "^1.0.0"
+pydantic = "^2.10.0"
+pyyaml = "^6.0.2"
+requests = "^2.32.0"
+beautifulsoup4 = "^4.12.0"
+duckduckgo-search = "^6.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.0"
+pytest-cov = "^6.0.0"
+black = "^24.10.0"
+flake8 = "^7.1.0"
+mypy = "^1.13.0"
+isort = "^5.13.0"
+ipython = "^8.29.0"
+jupyter = "^1.1.0"
+
+[tool.poetry.scripts]
+optimize-prompt = "prompt_optimizer_crew.main:main"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --cov=src/prompt_optimizer_crew --cov-report=html --cov-report=term"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

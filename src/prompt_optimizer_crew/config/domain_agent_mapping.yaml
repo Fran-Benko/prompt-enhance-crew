@@ -1,0 +1,142 @@
+# Domain to Agent Mapping Configuration
+# Defines which agents are relevant for each domain type
+
+domains:
+  software_development:
+    description: "Software development, coding, programming tasks"
+    agents:
+      - security        # Critical for code security
+      - quality         # Essential for clear requirements
+      - usability       # Important for developer experience
+      - structure       # Helps organize complex instructions
+      - role_definition # Defines coding context and style
+    priority: high
+    
+  scientific_research:
+    description: "Scientific research, data analysis, academic work"
+    agents:
+      - quality         # Critical for precision and accuracy
+      - structure       # Essential for logical organization
+      - role_definition # Defines scientific perspective
+      - security        # Important for data privacy
+      - usability       # Helps with clarity
+    priority: high
+    
+  marketing:
+    description: "Marketing, advertising, content creation"
+    agents:
+      - usability       # Critical for audience engagement
+      - role_definition # Essential for brand voice
+      - quality         # Important for message clarity
+      - structure       # Helps organize campaigns
+      - security        # Prevents harmful content
+    priority: medium
+    
+  data_analysis:
+    description: "Data analysis, statistics, visualization"
+    agents:
+      - quality         # Critical for accurate requirements
+      - structure       # Essential for analysis workflow
+      - security        # Important for data privacy
+      - usability       # Helps with clarity
+      - role_definition # Defines analytical perspective
+    priority: high
+    
+  education:
+    description: "Educational content, teaching, learning"
+    agents:
+      - usability       # Critical for student understanding
+      - quality         # Essential for accurate information
+      - structure       # Important for learning flow
+      - role_definition # Defines teaching perspective
+      - security        # Prevents inappropriate content
+    priority: medium
+    
+  general:
+    description: "General purpose tasks, miscellaneous"
+    agents:
+      - quality         # Always important
+      - usability       # Always important
+      - structure       # Always important
+      - security        # Always check for safety
+      - role_definition # Always helpful
+    priority: medium
+
+# Agent selection rules
+selection_rules:
+  minimum_agents: 3
+  maximum_agents: 5
+  always_include:
+    - coordinator  # Always needed for synthesis
+  
+  # Priority-based selection when limiting agents
+  priority_order:
+    - security
+    - quality
+    - usability
+    - structure
+    - role_definition
+
+# Domain detection keywords (used by domain classifier as fallback)
+domain_keywords:
+  software_development:
+    - code
+    - function
+    - algorithm
+    - programming
+    - debug
+    - API
+    - database
+    - software
+    - development
+    - script
+    
+  scientific_research:
+    - research
+    - study
+    - hypothesis
+    - experiment
+    - analysis
+    - scientific
+    - data
+    - statistics
+    - academic
+    - paper
+    
+  marketing:
+    - marketing
+    - campaign
+    - brand
+    - advertising
+    - content
+    - social media
+    - customer
+    - audience
+    - promotion
+    - engagement
+    
+  data_analysis:
+    - data
+    - analysis
+    - visualization
+    - statistics
+    - dataset
+    - metrics
+    - analytics
+    - insights
+    - trends
+    - patterns
+    
+  education:
+    - teach
+    - learn
+    - student
+    - education
+    - lesson
+    - curriculum
+    - training
+    - tutorial
+    - explain
+    - understand
+
+# Made with Bob

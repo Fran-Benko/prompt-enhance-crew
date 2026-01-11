@@ -1,0 +1,155 @@
+# Task Configurations for Prompt Optimizer Crew
+# Each task corresponds to an agent's evaluation or synthesis work
+
+security_evaluation:
+  description: >
+    Analyze the following prompt for security vulnerabilities, ethical concerns,
+    and potential risks:
+    
+    PROMPT: {prompt}
+    DOMAIN: {domain}
+    
+    Your evaluation should cover:
+    1. Prompt injection vulnerabilities
+    2. Potential for generating harmful content
+    3. Bias and fairness concerns
+    4. Privacy and data security issues
+    5. Ethical implications
+    6. Potential misuse scenarios
+    
+    Provide specific, actionable recommendations for improving security and ethics.
+  expected_output: >
+    A detailed security and ethics evaluation report with:
+    - List of identified vulnerabilities and risks
+    - Severity assessment for each issue
+    - Specific recommendations for mitigation
+    - Suggested prompt modifications to address concerns
+
+quality_evaluation:
+  description: >
+    Evaluate the quality, clarity, and completeness of the following prompt:
+    
+    PROMPT: {prompt}
+    DOMAIN: {domain}
+    
+    Your evaluation should assess:
+    1. Completeness of information
+    2. Clarity and precision of language
+    3. Absence of ambiguity
+    4. Consistency of instructions
+    5. Presence of contradictions
+    6. Missing context or requirements
+    
+    Identify specific areas that need improvement and provide concrete suggestions.
+  expected_output: >
+    A comprehensive quality evaluation report with:
+    - Assessment of completeness and clarity
+    - List of ambiguous or unclear elements
+    - Identified contradictions or inconsistencies
+    - Specific recommendations for improvement
+    - Suggested rewording or additions
+
+usability_evaluation:
+  description: >
+    Assess the usability and user-friendliness of the following prompt:
+    
+    PROMPT: {prompt}
+    DOMAIN: {domain}
+    
+    Your evaluation should focus on:
+    1. Ease of understanding for both LLMs and humans
+    2. Intuitiveness of instructions
+    3. Cognitive load and complexity
+    4. Directness and conciseness
+    5. Accessibility for different skill levels
+    6. Overall user experience
+    
+    Provide recommendations to make the prompt more intuitive and accessible.
+  expected_output: >
+    A usability evaluation report with:
+    - Assessment of ease of understanding
+    - Identification of complex or confusing elements
+    - Recommendations for simplification
+    - Suggestions for improving directness
+    - Proposed modifications for better accessibility
+
+structure_evaluation:
+  description: >
+    Analyze the structure and organization of the following prompt:
+    
+    PROMPT: {prompt}
+    DOMAIN: {domain}
+    
+    Your evaluation should examine:
+    1. Logical flow and organization
+    2. Information hierarchy
+    3. Formatting and readability
+    4. Section organization
+    5. Use of visual elements (bullets, numbers, etc.)
+    6. Overall coherence
+    
+    Suggest improvements to enhance the structural quality of the prompt.
+  expected_output: >
+    A structural evaluation report with:
+    - Assessment of logical organization
+    - Analysis of information hierarchy
+    - Recommendations for better formatting
+    - Suggested restructuring for improved flow
+    - Proposed use of organizational elements
+
+role_definition_evaluation:
+  description: >
+    Evaluate the role and perspective definition in the following prompt:
+    
+    PROMPT: {prompt}
+    DOMAIN: {domain}
+    
+    Your evaluation should verify:
+    1. Clarity of role or persona definition
+    2. Appropriateness of perspective for the task
+    3. Consistency of tone and voice
+    4. Explicitness of context instructions
+    5. Alignment of role with task requirements
+    6. Completeness of perspective guidance
+    
+    Provide recommendations for clearer role and perspective definition.
+  expected_output: >
+    A role definition evaluation report with:
+    - Assessment of role clarity
+    - Analysis of perspective appropriateness
+    - Identification of tone inconsistencies
+    - Recommendations for explicit role definition
+    - Suggested improvements for context and perspective
+
+synthesis:
+  description: >
+    You are the Coordinator Agent responsible for synthesizing all feedback
+    and creating the final optimized prompt.
+    
+    ORIGINAL PROMPT: {prompt}
+    DOMAIN: {domain}
+    
+    You have received detailed evaluations from multiple specialized agents.
+    Your task is to:
+    
+    1. Review all feedback from evaluator agents
+    2. Identify common themes and priorities
+    3. Resolve any contradictions between recommendations
+    4. Integrate the best suggestions from all perspectives
+    5. Generate a final, optimized version of the prompt
+    
+    The optimized prompt should:
+    - Address all critical security and ethical concerns
+    - Be clear, complete, and unambiguous
+    - Be user-friendly and intuitive
+    - Have excellent structure and organization
+    - Include clear role and perspective definition
+    - Maintain the original intent while significantly improving quality
+    
+    {feedback}
+  expected_output: >
+    The final optimized prompt that incorporates feedback from all evaluators.
+    The output should be the complete, ready-to-use optimized prompt text,
+    not a report or analysis. Include a brief summary of key improvements made.
+
+# Made with Bob
